@@ -1,0 +1,93 @@
+# ============================================================
+#  KiCad
+# ============================================================
+
+# Backups and autosave
+*-backups/
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_prl-bak
+*.kicad_pro-bak
+_autosave-*
+*.autosave
+*~
+
+# Lock files -- these embed your hostname + username and make the
+# project look "already open by someone else" for every collaborator.
+*.lck
+~*.lck
+
+# Per-user GUI state (open tabs, zoom, active layer, last-used settings).
+# Pure churn in diffs; not part of the design.
+*.kicad_prl
+
+# Library/footprint caches, rebuilt automatically by KiCad
+fp-info-cache
+sym-lib-table-bak
+fp-lib-table-bak
+
+# Generated reports and intermediates
+*.drc
+*.erc
+*.rpt
+*.dsn
+*.ses
+*.net
+
+# Fabrication / assembly output -- regenerate from source.
+# Put *released* fab packages in fab/ (see negation below) so they are versioned.
+gerbers/
+*.gbr
+*.gbrjob
+*.drl
+*.gko
+*.gbl
+*.gtl
+*.gbs
+*.gts
+*.gbo
+*.gto
+*.g2
+*.g3
+!fab/**
+
+# ============================================================
+#  3D / CAD scratch
+# ============================================================
+*.blend1
+*.blend2
+*.f3d.lock
+
+# ============================================================
+#  Python (pi/, pico/, testing/)
+# ============================================================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# ============================================================
+#  Editors / tooling
+# ============================================================
+# VS Code "Local History" extension -- this is what got committed as a
+# stray submodule in pcb/motherboard_v1/motherboard/.history
+.history/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# ============================================================
+#  OS cruft
+# ============================================================
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store

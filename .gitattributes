@@ -1,0 +1,50 @@
+# ============================================================
+#  Line endings
+# ============================================================
+# KiCad writes LF natively on every platform. Pin LF in the repo so the
+# files stay byte-identical across Windows/Linux/Mac and diffs show only
+# real design changes, not whole-file line-ending churn.
+* text=auto eol=lf
+
+# ============================================================
+#  KiCad source
+# ============================================================
+# merge=binary: never let git 3-way-merge these. A textually "successful"
+# merge of a schematic or board silently produces a corrupt/nonsense file.
+# On conflict, resolve by choosing one side and re-doing the edit in KiCad.
+*.kicad_sch  text eol=lf merge=binary
+*.kicad_pcb  text eol=lf merge=binary
+*.kicad_pro  text eol=lf merge=binary
+*.kicad_sym  text eol=lf
+*.kicad_mod  text eol=lf
+*.kicad_dru  text eol=lf
+*.kicad_wks  text eol=lf
+*.kicad_prl  text eol=lf
+sym-lib-table  text eol=lf
+fp-lib-table   text eol=lf
+
+# ============================================================
+#  Large binaries -> Git LFS
+# ============================================================
+# Requires `git lfs install --local` once per clone.
+*.step filter=lfs diff=lfs merge=lfs -text
+*.stp  filter=lfs diff=lfs merge=lfs -text
+*.stl  filter=lfs diff=lfs merge=lfs -text
+*.3mf  filter=lfs diff=lfs merge=lfs -text
+*.wrl  filter=lfs diff=lfs merge=lfs -text
+*.f3d  filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.FCStd filter=lfs diff=lfs merge=lfs -text
+
+# ============================================================
+#  Plain binaries (no diff/merge attempts)
+# ============================================================
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.zip  binary
+*.uf2  binary
+*.elf  binary
+*.bin  binary
+*.hex  binary
